@@ -1,5 +1,15 @@
 defmodule Feathericons.Compiler do
-  @default_attrs [xmlns: "http://www.w3.org/2000/svg",  width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", stroke_width: "2", stroke_linecap: "round", stroke_linejoin: "round"]
+  @default_attrs [
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    stroke_width: "2",
+    stroke_linecap: "round",
+    stroke_linejoin: "round"
+  ]
 
   @doc false
   defmacro __before_compile__(%Macro.Env{}) do
@@ -8,9 +18,8 @@ defmodule Feathericons.Compiler do
       |> Path.join("*.svg")
       |> Path.wildcard()
 
-
     for path <- icon_paths do
-    generate_function(path, @default_attrs)
+      generate_function(path, @default_attrs)
     end
   end
 
