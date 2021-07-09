@@ -34,6 +34,11 @@ defmodule FeathericonsTest do
     refute Feathericons.heart(viewBox: "0 0 12 12")
            |> Phoenix.HTML.safe_to_string() =~
              ~s(viewBox=\"0 0 24 24\")
-  end
 
+    assert Feathericons.volume(title: "Volume Icon") |> Phoenix.HTML.safe_to_string() =~
+             ~s(<title>Volume Icon</title>)
+
+    refute Feathericons.volume() |> Phoenix.HTML.safe_to_string() =~
+             ~s(<title>)
+  end
 end
