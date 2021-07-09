@@ -6,7 +6,6 @@
 
 This repo is an adaption of https://github.com/mveytsman/heroicons_elixir.
 
-
 ## Installation
 
 The package can be installed by adding `feathericons` to your list of dependencies in `mix.exs`:
@@ -14,8 +13,7 @@ The package can be installed by adding `feathericons` to your list of dependenci
 ```elixir
 def deps do
   [
-    {:feathericons, "~> 0.1.0"}
+    {:feathericons, "~> 0.2.0"}
   ]
 end
 ```
-
